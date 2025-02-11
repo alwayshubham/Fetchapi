@@ -3,9 +3,9 @@
 import React, { useState } from "react";
 
 
-const login = () => {
-    const[form, setForm] = useState({email: "", password: "" });
-    const[message, setMessage] = useState("");
+const Login = () => {
+    const [form, setForm] = useState({ email: "", password: "" });
+    const [message, setMessage] = useState("");
 
     const hanndleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -32,21 +32,21 @@ const login = () => {
                     <input
                         type="email"
                         placeholder="Email"
-                        onChange={(e) => setForm({ ...form, email:e.target.value })}
+                        onChange={(e) => setForm({ ...form, email: e.target.value })}
                         className="flex w-full p-2 border rounded"
                         required
                     />
                     <input
                         type="password"
                         placeholder="Password"
-                        onChange={(e) => setForm({ ...form, email:e.target.value })}
+                        onChange={(e) => setForm({ ...form, password: e.target.value })}
                         className="flex w-full p-2 border rounded"
                         required
                     />
                     <button
-                        type="submit"
-                        className="w-full p-2 bg-blue-500 text-white rounded"
-                    >Login
+                    type="submit"
+                    className="w-full p-2 bg-blue-500 text-white rounded">
+                    login
                     </button>
                     {message && <p className="mt-3 text-red-500">{message}</p>}
 
@@ -56,4 +56,4 @@ const login = () => {
     )
 }
 
-export default login;
+export default Login;
